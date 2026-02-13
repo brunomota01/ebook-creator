@@ -2,10 +2,8 @@
 import { jsPDF } from 'jspdf';
 import { Source } from '../types';
 
-declare const jspdf: { jsPDF: typeof jsPDF };
-
 export const generatePdf = (title: string, content: string, sources: Source[], coverImageUrl: string, backCoverImageUrl: string): void => {
-    const doc = new jspdf.jsPDF({
+    const doc = new jsPDF({
         orientation: 'p',
         unit: 'pt',
         format: 'a4'
@@ -97,7 +95,7 @@ export const generatePdf = (title: string, content: string, sources: Source[], c
     }
 
     // Add Footers
-    const pageCount = doc.internal.getNumberOfPages();
+    const pageCount = doc.getNumberOfPages();
     for (let i = 2; i <= pageCount; i++) {
         doc.setPage(i);
         doc.setFontSize(8);
