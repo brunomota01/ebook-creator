@@ -1,0 +1,5 @@
+{
+  "name": " eBook Creator 02 ",
+  "description": "An application that uses AI to research topics and generate complete eBooks from the findings, formatted as downloadable PDFs.",
+  "requestFramePermissions": []
+}
